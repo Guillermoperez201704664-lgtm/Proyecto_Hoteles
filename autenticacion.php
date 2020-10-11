@@ -21,17 +21,17 @@
 		session_start();
 		$_SESSION["autenticado"] =true;
 		$_SESSION["usuario"]=$_POST["txtusuario"];
-		header("Location: Menu_empleado.php");
+		header("Location: rol_Empleado/Menu_Empleado.php");
 
 
 	}elseif ($_POST["txtusuario"] ==  $datosAdministrador ['user'] && $_POST['txtcontrasena'] ==  $datosAdministrador ['password']){
 		session_start();
 		$_SESSION["autenticado"] =true;
 		$_SESSION["usuario"]=$_POST["txtusuario"];
-		header("Location: Menu_administrador.php");
+		header("Location: rol_administrador/Menu_administrador.php");
 
 	
 	}else{
-		header("Location: index1.php?error=si");
+		header("Location: Seccion.php");
 	}
 ?>

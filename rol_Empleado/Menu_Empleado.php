@@ -4,6 +4,6 @@
 	<title></title>
 </head>
 <body>
-        Bienvenidos
+        Bienvenidos Empleados 
 </body>
 </html>

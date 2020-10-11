@@ -7,12 +7,12 @@
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 
 	<link rel="stylesheet" href="css_inde/estilos_inde.css">
-	<link rel="stylesheet" href="fonts.css">  
+	<link rel="stylesheet" href="fonts/fonts.css">  
 	<link rel="stylesheet" href="css_inde/carrucel_inde.css">  
 	<link rel="stylesheet" href="css_inde/estilos1_inde.css">  
 	
 	<script src="http://code.jquery.com/jquery-latest.js"></script>
-	<script src="main.js"></script>
+	<script src="css_inde/main.js"></script>
 
 </head>
 <body>
