@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-09-2020 a las 03:07:55
+-- Tiempo de generación: 11-10-2020 a las 16:57:41
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.6
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `hotel`
+-- Base de datos: `hoteles`
 --
 
 -- --------------------------------------------------------
@@ -29,13 +29,13 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `administrador` (
   `administrador_id` int(11) NOT NULL,
-  `nombre_administrador` int(11) NOT NULL,
-  `apellido_administrador` int(11) NOT NULL,
+  `nombre_administrador` text NOT NULL,
+  `apellido_administrador` text NOT NULL,
   `DPI` int(11) NOT NULL,
   `edad` int(11) NOT NULL,
   `sexo_id` int(11) NOT NULL,
-  `useer` int(11) NOT NULL,
-  `password` int(11) NOT NULL
+  `user` text NOT NULL,
+  `password` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -127,7 +127,7 @@ CREATE TABLE `piso` (
 
 CREATE TABLE `sexo` (
   `sexo_id` int(11) NOT NULL,
-  `tipo_sexo` int(11) NOT NULL
+  `tipo_sexo` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------

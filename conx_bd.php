@@ -2,7 +2,7 @@
   $servidor ="localhost";
   $usurio="root";
   $contra = ""; 
-  $bd="hotel"; 
+  $bd="hoteles"; 
  
   $cadenaConexion = mysqli_connect($servidor,$usurio,$contra,$bd);
 
