@@ -1,18 +1,37 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
-        Bienvenidos Administradores
-        <p>
-        	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-        	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-        	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        	<img src="119032521_375947230081575_7818894051043825914_n.jpg">
-        </p>
-</body>
-</html>
+<?php 
+	include_once("diseno_pagina_administrador.php");
+ ?>
+
+ <!DOCTYPE html>
+ <html>
+ <head>
+ 	<title> Inicio </title>
+ </head>
+ <body>
+ 	  <link rel="stylesheet" href="CSS_Adm/derechos_autor.css">
+      <center>
+     <video src="Multimedia/Promocion_Verano_1.mp4" width="540" height="490"  autoplay muted loop ></video>
+     <video src="Multimedia/Promocion_Verano_2.mp4" width="540" height="490"  autoplay muted loop ></video>
+     </center>
+     <br>
+     <br>
+     <br>
+     <br>
+
+     <div class="footer-copy-redes">
+                  <div class="main-copy-redes">
+                        <div class="footer-copy">
+                              &copy; 2020, Todos los derechos reservados - | Desarrollador Guillermo Perez |.
+                        </div>
+                        <div class="footer-redes">
+                              <a href="#" class="fa fa-facebook"></a>
+                              <a href="#" class="fa fa-twitter"></a>
+                              <a href="#" class="fa fa-youtube-play"></a>
+                              <a href="#" class="fa fa-github"></a>
+                        </div>
+                  </div>
+            </div>
+
+
+ </body>
+ </html>
