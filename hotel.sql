@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-10-2020 a las 16:07:35
+-- Tiempo de generación: 07-09-2020 a las 03:07:55
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.6
 
@@ -29,21 +29,14 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `administrador` (
   `administrador_id` int(11) NOT NULL,
-  `nombre_administrador` text NOT NULL,
-  `apellido_administrador` text NOT NULL,
+  `nombre_administrador` int(11) NOT NULL,
+  `apellido_administrador` int(11) NOT NULL,
   `DPI` int(11) NOT NULL,
   `edad` int(11) NOT NULL,
   `sexo_id` int(11) NOT NULL,
-  `user` text NOT NULL,
-  `password` text NOT NULL
+  `useer` int(11) NOT NULL,
+  `password` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `administrador`
---
-
-INSERT INTO `administrador` (`administrador_id`, `nombre_administrador`, `apellido_administrador`, `DPI`, `edad`, `sexo_id`, `user`, `password`) VALUES
-(12, 'andy', 'perez', 456, 22, 1, '@123', '@789');
 
 -- --------------------------------------------------------
 
@@ -134,15 +127,8 @@ CREATE TABLE `piso` (
 
 CREATE TABLE `sexo` (
   `sexo_id` int(11) NOT NULL,
-  `tipo_sexo` text NOT NULL
+  `tipo_sexo` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `sexo`
---
-
-INSERT INTO `sexo` (`sexo_id`, `tipo_sexo`) VALUES
-(1, 'M');
 
 -- --------------------------------------------------------
 
