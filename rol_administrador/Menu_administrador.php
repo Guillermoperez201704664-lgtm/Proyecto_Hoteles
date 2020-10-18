@@ -8,7 +8,7 @@
  	<title> Inicio </title>
  </head>
  <body>
- 	  <link rel="stylesheet" href="CSS_Adm/derechos_autor.css">
+ 	
       <center>
      <video src="Multimedia/Promocion_Verano_1.mp4" width="540" height="490"  autoplay muted loop ></video>
      <video src="Multimedia/Promocion_Verano_2.mp4" width="540" height="490"  autoplay muted loop ></video>
@@ -17,7 +17,10 @@
      <br>
      <br>
      <br>
-
+     <br>
+     <br>
+     <br>
+     <br>
      <div class="footer-copy-redes">
                   <div class="main-copy-redes">
                         <div class="footer-copy">

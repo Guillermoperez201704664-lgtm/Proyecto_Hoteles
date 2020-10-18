@@ -33,7 +33,7 @@ header label:hover{
 
 main{
     width: 100%;
-    background: #F9565B;
+  
 }
 
 .content-menu{
@@ -165,13 +165,13 @@ main{
 .content-article{
     margin-left: 120px;
     padding: 40px;
-    background: #F9565B
+    
 }
 
 .content-article article{
     background: white;
     padding: 20px;
-    border: 6px solid #dfdfdf;
+   
 }
 .content-article h1{
     font-size: 60px;
