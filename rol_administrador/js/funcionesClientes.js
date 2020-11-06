@@ -6,9 +6,9 @@ function agregar_datos() {
         data: datos,
         success: function(e) {
             if (e == 1) {
-                alert("registro guardado con exito");
+                alert("Registros Almacenados con exito");
             } else {
-                alert("Error al almacenar registro");
+                alert("Los registros no fueron Almacenados verificar datos");
             }
         }
     });
@@ -25,9 +25,9 @@ function modificar_datos() {
         data: datos,
         success: function(e) {
             if (e == 1) {
-                alert("registro modificado");
+                alert("Registros Actualizados con exito");
             } else {
-                alert("no se puede modificar, verifique datos");
+                alert("Los registros no fueron Actualizados verificar datos");
             }
         }
     });
@@ -43,9 +43,9 @@ function eliminar_datos() {
         data: datos,
         success: function(e) {
             if (e == 1) {
-                alert("Registro Eliminados");
+                alert("Registros Eliminados con exito");
             } else {
-                alert("no se puede eliminar, verifique datos");
+                alert("Los registros no fueron Eliminados verificar datos");
             }
         }
     });

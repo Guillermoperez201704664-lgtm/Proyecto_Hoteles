@@ -42,7 +42,7 @@
 		<div class="footer-copy-redes">
 			<div class="main-copy-redes">
 				<div class="footer-copy">
-                              &copy; 2020, Todos los derechos reservados - | Rocio Urbina | | Guillermo Perez |.
+                              &copy; 2020,- Desarrolladores | Rocio Urbina 201704722| | Guillermo Perez 201704664 |.
                         </div>
 				<div class="footer-redes">
 					<a href="#" class="fa fa-facebook"></a>

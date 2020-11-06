@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-10-2020 a las 16:57:41
+-- Tiempo de generación: 06-11-2020 a las 17:35:31
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.6
 
@@ -38,6 +38,13 @@ CREATE TABLE `administrador` (
   `password` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `administrador`
+--
+
+INSERT INTO `administrador` (`administrador_id`, `nombre_administrador`, `apellido_administrador`, `DPI`, `edad`, `sexo_id`, `user`, `password`) VALUES
+(1, 'Guillermo ', 'Perez ', 203, 22, 1, '@_g', '@_p');
+
 -- --------------------------------------------------------
 
 --
@@ -52,6 +59,14 @@ CREATE TABLE `asignacion_habitacion` (
   `estatus_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `asignacion_habitacion`
+--
+
+INSERT INTO `asignacion_habitacion` (`correlativo`, `cliente_id`, `habitacion_id`, `Fecha_ingreso`, `estatus_id`) VALUES
+(1, 123, 100, '5-10-2020', 1),
+(5, 456, 200, '6-10-2020', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -63,9 +78,18 @@ CREATE TABLE `cliente` (
   `nombre_cliente` text NOT NULL,
   `apellido_cliente` text NOT NULL,
   `Dpi` int(11) NOT NULL,
-  `sexo_id` int(11) NOT NULL,
-  `administrador_id` int(11) NOT NULL
+  `sexo_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `cliente`
+--
+
+INSERT INTO `cliente` (`cliente_id`, `nombre_cliente`, `apellido_cliente`, `Dpi`, `sexo_id`) VALUES
+(123, 'Angel', 'Rodas', 12345678, 1),
+(132, 'Lorena', 'Perez', 78653421, 2),
+(456, 'Esmeralda', 'Sosa', 87654321, 2),
+(789, 'Carlos', 'Morales', 21436587, 1);
 
 -- --------------------------------------------------------
 
@@ -85,6 +109,13 @@ CREATE TABLE `empleados` (
   `administrador_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `empleados`
+--
+
+INSERT INTO `empleados` (`empleado_id`, `nombre_empleado`, `apellido_empleado`, `DPI`, `edad`, `user`, `password`, `sexo_id`, `administrador_id`) VALUES
+(1, 'Elena ', 'Ventura ', 789, 19, 'elena', 'ventura', 2, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -95,6 +126,15 @@ CREATE TABLE `estatus_habitacion` (
   `estatus_id` int(11) NOT NULL,
   `tipo_estatus` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `estatus_habitacion`
+--
+
+INSERT INTO `estatus_habitacion` (`estatus_id`, `tipo_estatus`) VALUES
+(0, 'libre'),
+(1, 'ocupado'),
+(2, 'reserva ');
 
 -- --------------------------------------------------------
 
@@ -108,6 +148,15 @@ CREATE TABLE `habitacion` (
   `piso_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `habitacion`
+--
+
+INSERT INTO `habitacion` (`habitacion_id`, `tipo_habitacion_id`, `piso_id`) VALUES
+(300, 10, 3),
+(100, 20, 1),
+(200, 30, 2);
+
 -- --------------------------------------------------------
 
 --
@@ -118,6 +167,15 @@ CREATE TABLE `piso` (
   `piso_id` int(11) NOT NULL,
   `descripcion` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `piso`
+--
+
+INSERT INTO `piso` (`piso_id`, `descripcion`) VALUES
+(1, 'nivel 1'),
+(2, 'nivel 2'),
+(3, 'nivel 3');
 
 -- --------------------------------------------------------
 
@@ -130,6 +188,14 @@ CREATE TABLE `sexo` (
   `tipo_sexo` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `sexo`
+--
+
+INSERT INTO `sexo` (`sexo_id`, `tipo_sexo`) VALUES
+(1, 'Masculino'),
+(2, 'Femenino');
+
 -- --------------------------------------------------------
 
 --
@@ -138,10 +204,18 @@ CREATE TABLE `sexo` (
 
 CREATE TABLE `tipo_habitacion` (
   `tipo_habitacion_id` int(11) NOT NULL,
-  `nombre_habitacion` int(11) NOT NULL,
-  `Precio_hora` int(11) NOT NULL,
+  `nombre_habitacion` text NOT NULL,
   `Precio_dia` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `tipo_habitacion`
+--
+
+INSERT INTO `tipo_habitacion` (`tipo_habitacion_id`, `nombre_habitacion`, `Precio_dia`) VALUES
+(10, 'Suit', 500),
+(20, 'Familiar', 300),
+(30, 'Personal', 100);
 
 --
 -- Índices para tablas volcadas
@@ -168,8 +242,7 @@ ALTER TABLE `asignacion_habitacion`
 --
 ALTER TABLE `cliente`
   ADD PRIMARY KEY (`cliente_id`,`Dpi`),
-  ADD KEY `sexo_id` (`sexo_id`),
-  ADD KEY `administrador_id` (`administrador_id`);
+  ADD KEY `sexo_id` (`sexo_id`);
 
 --
 -- Indices de la tabla `empleados`

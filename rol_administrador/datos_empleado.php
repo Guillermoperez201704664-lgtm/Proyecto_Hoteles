@@ -31,50 +31,56 @@
 
                 <form id="frminsertarclientes" method="post">
                     <div class="form-group">
-                        
                         <div>
-                            <input type="text" class="form-control" name="txtempleado_id" id="txtempleado_id" placeholder="Codigo Empleado">
+                         <center><input type="text" class="form-control" name="txtempleado_id" id="txtempleado_id" placeholder="Codigo Empleado"></center>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <input type="text" class="form-control" name="txtnombre_empleado" id="txtnombre_empleado" placeholder="Nombre Empleado">
+                        <center><input type="text" class="form-control" name="txtnombre_empleado" id="txtnombre_empleado" placeholder="Nombre Empleado"></center>
                     </div>
 
                     <div class="form-group">
-                        <input type="text" class="form-control" name="txtapellido_empleado" id="txtapellido_empleado" placeholder="Apellido Empleado"> 
+                        <center><input type="text" class="form-control" name="txtapellido_empleado" id="txtapellido_empleado" placeholder="Apellido Empleado"></center> 
                     </div>
 
                     <div class="form-group">
-                        <input type="text" class="form-control" name="txtDPI" id="txtDPI" placeholder="DPI Empleado">
+                        <center><input type="text" class="form-control" name="txtDPI" id="txtDPI" placeholder="DPI Empleado"></center> 
                     </div>
 
                     <div class="form-group">
-                        <input type="text" class="form-control" name="txtedad" id="txtedad" placeholder="Edad Empleado">
+                         <center><input type="text" class="form-control" name="txtedad" id="txtedad" placeholder="Edad Empleado"></center>
                     </div>
 
 
                      <div class="form-group">
-                        <input type="text" class="form-control" name="txtuser" id="txtuser" placeholder="User Empleado">
+                        <center><input type="text" class="form-control" name="txtuser" id="txtuser" placeholder="User Empleado"></center>
                     </div>
 
 
                      <div class="form-group">
-                        <input type="text" class="form-control" name="txtpassword" id="txtpassword" placeholder="Password Empleado">
+                        <center><input type="text" class="form-control" name="txtpassword" id="txtpassword" placeholder="Password Empleado"></center>
                     </div>
 
 
                     <div class="form-group">
+                        <center>
                         <select class="" name="txtsexo_id" id="txtsexo_id">
-                            <option value="0"> Sexo Empleado</option>
-                            <option value="1"> Femenino</option>
-                            <option value="2"> Masculino </option>
-                        </select>  
+                            <?php
+                            include "dao/conexion.php";
+                            $sql = "select * from sexo";
+                            $ejecutar = mysqli_query($conexion, $sql);
+                            while($txtsexo_id = mysqli_fetch_array($ejecutar)){
+                                echo "<option value='".$txtsexo_id ['sexo_id']."'>".utf8_encode($txtsexo_id ['tipo_sexo'])."</option>";
+                            } 
+                            ?>
+                        </select>
+                        </center>  
                     </div>
 
 
                      <div class="form-group">
-                        <input type="text" class="form-control" name="txtadministrador_id" id="txtadministrador_id" placeholder="Codigo Administrador">
+                        <center><input type="text" class="form-control" name="txtadministrador_id" id="txtadministrador_id" placeholder="Codigo Administrador"></center>
                     </div>
 
 
@@ -90,26 +96,26 @@
             </div>
             <div class="col">
                 <h3 class="text-center">Base de Datos Empleado</h3>
-                <button type="submit" class="btn btn-secondary" name="btnlistado" id="btnlistado"> Listado </button>
+                  <a href="datos_empleado.php"><button type="submit" class="btn btn-secondary" name="btnverbasedatos" id="btnverbasedatos"> Ver Base de Datos</button> </a>
+
 
                 <table class="table">
                     <thead>
                         <tr>
                             
                             <th scope="col">Codigo </th>
-                            <th scope="col">Nombre</th>
-                            <th scope="col">Apellido</th>
+                            <th scope="col">Nombre Empleado</th>
                             <th scope="col">DPI</th>
                             <th scope="col">Edad</th>
                             <th scope="col">User</th>
                             <th scope="col">Password</th>
                             <th scope="col">Sexo</th>
-                            <th scope="col">Codigo Administrador</th>
+                            <th scope="col">Nombre Adminstrador</th>
                         </tr>
                     </thead>
                     <?php
                     include "dao/conexion.php";
-                    $sql = "select * from empleados";
+                    $sql = "Select empleados.empleado_id, CONCAT(empleados.apellido_empleado, ', ',empleados.nombre_empleado)AS Nombre_completo_empleado,empleados.DPI, empleados.edad, empleados.user, empleados.password, sexo.tipo_sexo, CONCAT(administrador.apellido_administrador, ',',administrador.nombre_administrador)AS Nombre_completo_administrador FROM sexo INNER JOIN (administrador INNER JOIN empleados on administrador.administrador_id = empleados.administrador_id) on empleados.sexo_id = sexo.sexo_id";
                     $ejecutar = mysqli_query($conexion, $sql);
                     while ($fila = mysqli_fetch_array($ejecutar)){
                         
@@ -119,14 +125,13 @@
                     <tbody>
                         
                         <td> <center><?php echo $fila['empleado_id']?> </center></td>
-                        <td> <center><?php echo $fila['nombre_empleado']?> </center></td>
-                        <td> <center><?php echo $fila['apellido_empleado']?> </center></td>
+                        <td> <center><?php echo $fila['Nombre_completo_empleado']?> </center></td>
                         <td> <center><?php echo $fila['DPI']?> </center></td>
                         <td> <center><?php echo $fila['edad']?> </center></td>
                         <td> <center><?php echo $fila['user']?> </center></td>
                         <td> <center><?php echo $fila['password']?> </center></td>
-                        <td> <center><?php echo $fila['sexo_id']?> </center></td>
-                        <td> <center><?php echo $fila['administrador_id']?> </center></td>
+                        <td> <center><?php echo $fila['tipo_sexo']?> </center></td>
+                        <td> <center><?php echo $fila['Nombre_completo_administrador']?> </center></td>
                         <td></td>
                        
                     </tbody>
@@ -168,7 +173,7 @@
      <div class="footer-copy-redes">
                   <div class="main-copy-redes">
                         <div class="footer-copy">
-                              &copy; 2020, Todos los derechos reservados - | Desarrollador Guillermo Perez |.
+                              &copy; 2020, Todos los derechos reservados - | Desarrollador Guillermo Perez 201704664|.
                         </div>
                         <div class="footer-redes">
                               <a href="#" class="fa fa-facebook"></a>
