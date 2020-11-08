@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 06-11-2020 a las 17:35:31
--- Versión del servidor: 10.4.11-MariaDB
--- Versión de PHP: 7.4.6
+-- Tiempo de generación: 08-11-2020 a las 04:16:29
+-- Versión del servidor: 10.4.13-MariaDB
+-- Versión de PHP: 7.4.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -64,8 +64,7 @@ CREATE TABLE `asignacion_habitacion` (
 --
 
 INSERT INTO `asignacion_habitacion` (`correlativo`, `cliente_id`, `habitacion_id`, `Fecha_ingreso`, `estatus_id`) VALUES
-(1, 123, 100, '5-10-2020', 1),
-(5, 456, 200, '6-10-2020', 1);
+(1, 123, 100, '7-11-2020', 1);
 
 -- --------------------------------------------------------
 
@@ -144,6 +143,7 @@ INSERT INTO `estatus_habitacion` (`estatus_id`, `tipo_estatus`) VALUES
 
 CREATE TABLE `habitacion` (
   `habitacion_id` int(11) NOT NULL,
+  `numero_habitacion` int(50) NOT NULL,
   `tipo_habitacion_id` int(11) NOT NULL,
   `piso_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -152,10 +152,35 @@ CREATE TABLE `habitacion` (
 -- Volcado de datos para la tabla `habitacion`
 --
 
-INSERT INTO `habitacion` (`habitacion_id`, `tipo_habitacion_id`, `piso_id`) VALUES
-(300, 10, 3),
-(100, 20, 1),
-(200, 30, 2);
+INSERT INTO `habitacion` (`habitacion_id`, `numero_habitacion`, `tipo_habitacion_id`, `piso_id`) VALUES
+(100, 1, 10, 1),
+(101, 2, 10, 1),
+(102, 3, 10, 1),
+(103, 4, 10, 1),
+(104, 5, 10, 1),
+(105, 6, 10, 1),
+(106, 7, 10, 1),
+(107, 8, 10, 1),
+(108, 9, 10, 1),
+(109, 10, 10, 1),
+(110, 11, 10, 1),
+(200, 12, 20, 2),
+(201, 13, 20, 2),
+(202, 14, 20, 2),
+(203, 15, 20, 2),
+(204, 16, 20, 2),
+(205, 17, 20, 2),
+(206, 18, 20, 2),
+(207, 19, 20, 2),
+(208, 20, 20, 2),
+(209, 21, 20, 2),
+(210, 22, 20, 2),
+(300, 23, 30, 3),
+(301, 24, 30, 3),
+(302, 25, 30, 3),
+(303, 0, 30, 3),
+(304, 0, 30, 3),
+(305, 0, 30, 3);
 
 -- --------------------------------------------------------
 
@@ -213,9 +238,9 @@ CREATE TABLE `tipo_habitacion` (
 --
 
 INSERT INTO `tipo_habitacion` (`tipo_habitacion_id`, `nombre_habitacion`, `Precio_dia`) VALUES
-(10, 'Suit', 500),
+(10, 'Personal', 100),
 (20, 'Familiar', 300),
-(30, 'Personal', 100);
+(30, 'Suit', 500);
 
 --
 -- Índices para tablas volcadas
