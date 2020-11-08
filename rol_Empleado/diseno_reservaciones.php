@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
-       <script src="JS/funciones.js"></script>
+       <script src="JS/funcionese.js"></script>
        <script src="jquery-3.5.1.min.js"></script>
 
         <!-- Bootstrap CSS -->
@@ -32,40 +32,49 @@
         <div class="form-row">
            <div class="form-group col-md-2ss">
              <label for="txt_corel">correlativo</label>
-             <input type="text" class="form-control" name="txtcorel" id="txtcorel">
+             <input type="text" class="form-control" name="txt_corel" id="txt_corel">
            </div>
            <div class="form-group col-md-3">
-              <label for="txt_cliente">cliente id</label><br>
-              <select name="txtclient" class="form-group col-md-10">
+              <label for="txt_client">Nombre del cliente</label><br>
+              <select name="txt_client" class="form-group col-md-10" id="txt_client">
                 <?php
                    include "conexion.php";
                    $sql = "select * from cliente";
                    $ejecutar = mysqli_query($conexion, $sql);
-                   while($txtcliente = mysqli_fetch_array($ejecutar)){
-                    echo "<option value='".$txtcliente['cliente_id']."'>".utf8_encode($txtcliente['cliente_id'])."</option>";
+                   while($txt_client = mysqli_fetch_array($ejecutar)){
+                    echo "<option value='".$txt_client['cliente_id']."'>".utf8_encode($txt_client['nombre_cliente'])."</option>";
                   } 
                 ?>
               </select>
            </div>
            <div class="form-group col-md-3">
-              <label for="txt_habit">habitacion_id</label>
-              <input type="text" class="form-control" name="txthabit" id="txthabit">
+              <label for="txt_habit">No.habitacion</label>
+              <select name="txt_habit" class="form-group col-md-10">
+                <?php
+                   include "conexion.php";
+                   $sql = "select * from habitacion";
+                   $ejecutar = mysqli_query($conexion, $sql);
+                   while($txt_habit = mysqli_fetch_array($ejecutar)){
+                    echo "<option value='".$txt_habit['habitacion_id']."'>".utf8_encode($txt_habit['numero_habitacion'])."</option>";
+                  } 
+                ?>
+              </select>
            </div>
         </div><br>
         <div class="form-row">
            <div class="form-group col-md-3">
               <label for="txt_fechi">Fecha de ingreso</label>
-              <input type="text" class="form-control" name="txtfechi" id="txtfechi">
+              <input type="text" class="form-control" name="txt_fechi" id="txt_fechi">
            </div>
-           <div class="form-group col-md-4">
-             <label for="text_estatus">Estatus (0-libre, 1-ocupado, 2-reserva)</label>
-             <select name="txtestat" class="form-group col-md-10">
+           <div class="form-group col-md-">
+             <label for="txt_estat">Estatus de la habitacion</label>
+             <select name="txt_estat" class="form-group col-md-10">
                 <?php
                    include "conexion.php";
                    $sql = "select * from estatus_habitacion";
                    $ejecutar = mysqli_query($conexion, $sql);
-                   while($txtestatus = mysqli_fetch_array($ejecutar)){
-                    echo "<option value='".$txtestatus['estatus_id']."'>".utf8_encode($txtestatus['estatus_id'])."</option>";
+                   while($txt_estat = mysqli_fetch_array($ejecutar)){
+                    echo "<option value='".$txt_estat['estatus_id']."'>".utf8_encode($txt_estat['tipo_estatus'])."</option>";
                   } 
                 ?>
               </select>
@@ -73,10 +82,10 @@
         </div> 
          
         <div>
-             <button type="submit" class="p-3 mb-2 bg-dark text-white" name="btnguardar" id="btnguardar">Guardar</button> 
-             <button type="submit" class="p-3 mb-2 bg-primary text-white" name="btnactualizar" id="btnactualizar">Actualizar</button>
-             <button type="submit" class="p-3 mb-2 bg-dark text-white" name="btneliminar" id="btneliminar">Buscar</button>
-             <button type="submit" class="p-3 mb-2 bg-primary text-white" name="btnactualizar" id="btnactualizar">Eliminar</button>
+             <button type="submit" class="p-3 mb-2 bg-dark text-white" name="btnguardarem" id="btnguardarem">Guardar</button> 
+             <button type="submit" class="p-3 mb-2 bg-primary text-white" name="btnactualizarem" id="btnactualizarem">Actualizar</button>
+             <button type="submit" class="p-3 mb-2 bg-dark text-white" name="btneliminarem" id="btneliminarem">Buscar</button>
+             <button type="submit" class="p-3 mb-2 bg-primary text-white" name="btnactualizarem" id="btnactualizarem">Eliminar</button>
              <tr><td><a href="Menu_Empleado.php"><img src="imgensE/imge.4.png"  ></td></tr>
              <tr><td><a href="../Seccion.php"><img src="imgensE/imge.5.png" ></td></tr>
         </div>
@@ -117,17 +126,17 @@
   </div>
   <script type="text/javascript">
         $(document).ready(function() {
-            $("#btnguardar").on('click', function(e) {
+            $("#btnguardarem").on('click', function(e) {
                 //alert("click");
                 e.preventDefault();
-                agregar_datos();
+                agregar_datosres();
             });
-            $("#btnactualizar").on('click', function(e){
+            $("#btnactualizarem").on('click', function(e){
                 alert("click en boton actualizar");
                 e.preventDefault();
                 modificar_datos();
             });
-            $("#btneliminar").on('click', function(e){
+            $("#btneliminarem").on('click', function(e){
                 alert("click en boton eliminar");
                 e.preventDefault();
                 eliminar_datos();

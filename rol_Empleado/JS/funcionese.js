@@ -1,4 +1,4 @@
-function agregar_datos() {
+function agregar_datosres() {
     var datos = $("#frmrecervacion").serialize();
     //alert(datos);
     $.ajax({
