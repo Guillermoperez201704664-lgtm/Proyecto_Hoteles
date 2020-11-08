@@ -26,7 +26,7 @@
 
                   <li><a href="datos_empleado.php"><span class="icon-profile"></a></span><h4 class="txt3">Empleados </h4></li>
 
-                  <li><a href="Menu_administrador.php"><span class="icon-profile"></a></span><h4 class="txt3">Administrador </h4></li>
+                  <li><a href="datos_admin.php"><span class="icon-profile"></a></span><h4 class="txt3">Administrador </h4></li>
 
                   <li><a href="Menu_administrador.php"><span class="icon-folder-open"></a></span><h4 class="txt3">Historial Clientes  </h4></li>
 

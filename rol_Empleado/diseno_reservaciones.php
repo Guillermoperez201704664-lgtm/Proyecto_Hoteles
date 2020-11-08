@@ -30,55 +30,27 @@
   <div class="container">     
    <form id="frmrecervacion" method="post">
         <div class="form-row">
-           <div class="form-group col-md-2ss">
-             <label for="txt_corel">correlativo</label>
-             <input type="text" class="form-control" name="txt_corel" id="txt_corel">
-           </div>
-           <div class="form-group col-md-3">
-              <label for="txt_client">Nombre del cliente</label><br>
-              <select name="txt_client" class="form-group col-md-10" id="txt_client">
-                <?php
-                   include "conexion.php";
-                   $sql = "select * from cliente";
-                   $ejecutar = mysqli_query($conexion, $sql);
-                   while($txt_client = mysqli_fetch_array($ejecutar)){
-                    echo "<option value='".$txt_client['cliente_id']."'>".utf8_encode($txt_client['nombre_cliente'])."</option>";
-                  } 
-                ?>
-              </select>
-           </div>
-           <div class="form-group col-md-3">
-              <label for="txt_habit">No.habitacion</label>
-              <select name="txt_habit" class="form-group col-md-10">
-                <?php
-                   include "conexion.php";
-                   $sql = "select * from habitacion";
-                   $ejecutar = mysqli_query($conexion, $sql);
-                   while($txt_habit = mysqli_fetch_array($ejecutar)){
-                    echo "<option value='".$txt_habit['habitacion_id']."'>".utf8_encode($txt_habit['numero_habitacion'])."</option>";
-                  } 
-                ?>
-              </select>
-           </div>
-        </div><br>
-        <div class="form-row">
-           <div class="form-group col-md-3">
-              <label for="txt_fechi">Fecha de ingreso</label>
-              <input type="text" class="form-control" name="txt_fechi" id="txt_fechi">
-           </div>
-           <div class="form-group col-md-">
-             <label for="txt_estat">Estatus de la habitacion</label>
-             <select name="txt_estat" class="form-group col-md-10">
-                <?php
-                   include "conexion.php";
-                   $sql = "select * from estatus_habitacion";
-                   $ejecutar = mysqli_query($conexion, $sql);
-                   while($txt_estat = mysqli_fetch_array($ejecutar)){
-                    echo "<option value='".$txt_estat['estatus_id']."'>".utf8_encode($txt_estat['tipo_estatus'])."</option>";
-                  } 
-                ?>
-              </select>
-           </div>
+
+          
+           <div class="form-group">
+                        <center>
+                        <select class="" name="txtsexo_id" id="txtsexo_id">
+                            <?php
+                            include "dao/conexion.php";
+                            $sql = "select * from sexo";
+                            $ejecutar = mysqli_query($conexion, $sql);
+                            while($txtsexo_id = mysqli_fetch_array($ejecutar)){
+                                echo "<option value='".$txtsexo_id ['sexo_id']."'>".utf8_encode($txtsexo_id ['tipo_sexo'])."</option>";
+                            } 
+                            ?>
+                        </select>
+                        </center>  
+                    </div>
+
+
+
+
+
         </div> 
          
         <div>

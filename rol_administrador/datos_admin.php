@@ -10,7 +10,7 @@
 
     <script src="jquery-3.5.1.min.js"></script>
 
-    <script src="js/funcionesClientes.js"></script>
+    <script src="jsA/funcionesClientes.js"></script>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
@@ -27,47 +27,38 @@
 
         <div class="row">
             <div class="col-3">
-                <h3>Datos Empleados </h3>
+                <CENTER><h3> Datos Administrador </h3></CENTER>
 
                 <form id="frminsertarclientes" method="post">
                     <div class="form-group">
                         <div>
-                         <center><input type="text" class="form-control" name="txtempleado_id" id="txtempleado_id" placeholder="Codigo Empleado"></center>
+                         <center><input type="text" class="form-control" name="txtadm_id" id="txtadm_id" placeholder="Codigo Administrador"></center>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <center><input type="text" class="form-control" name="txtnombre_empleado" id="txtnombre_empleado" placeholder="Nombre Empleado"></center>
+                        <center><input type="text" class="form-control" name="txtnombre_empleado" id="txtnombre_empleado" placeholder="Nombre Administrador"></center>
                     </div>
 
                     <div class="form-group">
-                        <center><input type="text" class="form-control" name="txtapellido_empleado" id="txtapellido_empleado" placeholder="Apellido Empleado"></center> 
+                        <center><input type="text" class="form-control" name="txtapellido_empleado" id="txtapellido_empleado" placeholder="Apellido Administrador"></center> 
                     </div>
 
                     <div class="form-group">
-                        <center><input type="text" class="form-control" name="txtDPI" id="txtDPI" placeholder="DPI Empleado"></center> 
+                        <center><input type="text" class="form-control" name="txtDPI" id="txtDPI" placeholder="DPI Administrador"></center> 
                     </div>
 
                     <div class="form-group">
-                         <center><input type="text" class="form-control" name="txtedad" id="txtedad" placeholder="Edad Empleado"></center>
+                         <center><input type="text" class="form-control" name="txtedad" id="txtedad" placeholder="Edad Administrador"></center>
                     </div>
 
-
-                     <div class="form-group">
-                        <center><input type="text" class="form-control" name="txtuser" id="txtuser" placeholder="User Empleado"></center>
-                    </div>
-
-
-                     <div class="form-group">
-                        <center><input type="text" class="form-control" name="txtpassword" id="txtpassword" placeholder="Password Empleado"></center>
-                    </div>
 
 
                     <div class="form-group">
                         <center>
                         <select class="" name="txtsexo_id" id="txtsexo_id">
                             <?php
-                            include "dao/conexion.php";
+                            include "daoA/conexion.php";
                             $sql = "select * from sexo";
                             $ejecutar = mysqli_query($conexion, $sql);
                             while($txtsexo_id = mysqli_fetch_array($ejecutar)){
@@ -78,12 +69,15 @@
                         </center>  
                     </div>
 
-
-                     <div class="form-group">
-                        <center><input type="text" class="form-control" name="txtadministrador_id" id="txtadministrador_id" placeholder="Codigo Administrador"></center>
+                    <div class="form-group">
+                        <center><input type="text" class="form-control" name="txtuser" id="txtuser" placeholder="User Administrador"></center>
                     </div>
 
 
+                     <div class="form-group">
+                        <center><input type="text" class="form-control" name="txtpassword" id="txtpassword" placeholder="Password Administrador"></center>
+                    </div>
+        
                     <button type="submit" class="btn btn-primary" name="btnguardar" id="btnguardar">Guardar</button>
 
                     <button type="submit" class="btn btn-secondary" name="btnactualizar" id="btnactualizar">Actualizar</button>
@@ -94,12 +88,12 @@
 
                 </form>
             </div>
-            <div class="col">
-                <h3 class="text-center">Base de Datos Empleado</h3>
+           <div class="col">
+                <h3 class="text-center">Base de Datos Administrador </h3>
                   
-                  <a href="datos_empleado.php"><button type="submit" class="btn btn-secondary" name="btnverbasedatos" id="btnverbasedatos"> Ver Base de Datos</button> </a>
+                  <a href="datos_admin.php"><button type="submit" class="btn btn-secondary" name="btnverbasedatos" id="btnverbasedatos"> Ver Base de Datos</button> </a>
 
-                  <a href="datos_empleado.php"><button type="submit" class="btn btn-secondary" name="btnactualizar" id="btnactualizar"> Actualizar Pagina</button> </a>
+                  <a href="datos_admin.php"><button type="submit" class="btn btn-secondary" name="btnactualizar" id="btnactualizar"> Actualizar Pagina</button> </a>
 
 
                 <table class="table">
@@ -107,18 +101,18 @@
                         <tr>
                             
                             <th scope="col">Codigo </th>
-                            <th scope="col">Nombre Empleado</th>
+                            <th scope="col">Nombre Administrador </th>
                             <th scope="col">DPI</th>
                             <th scope="col">Edad</th>
                             <th scope="col">User</th>
                             <th scope="col">Password</th>
                             <th scope="col">Sexo</th>
-                            <th scope="col">Nombre Adminstrador</th>
                         </tr>
                     </thead>
                     <?php
-                    include "dao/conexion.php";
-                    $sql = "Select empleados.empleado_id, CONCAT(empleados.apellido_empleado, ', ',empleados.nombre_empleado)AS Nombre_completo_empleado,empleados.DPI, empleados.edad, empleados.user, empleados.password, sexo.tipo_sexo, CONCAT(administrador.apellido_administrador, ',',administrador.nombre_administrador)AS Nombre_completo_administrador FROM sexo INNER JOIN (administrador INNER JOIN empleados on administrador.administrador_id = empleados.administrador_id) on empleados.sexo_id = sexo.sexo_id";
+                    include "daoA/conexion.php";
+                    $sql = " SELECT administrador.administrador_id, CONCAT(administrador.apellido_administrador, ', ',administrador.nombre_administrador)AS Nombre_completo_admin,administrador.DPI,administrador.edad, sexo.tipo_sexo,administrador.user, administrador.password 
+                         From administrador inner join sexo on administrador.sexo_id = sexo.sexo_id     ";
                     $ejecutar = mysqli_query($conexion, $sql);
                     while ($fila = mysqli_fetch_array($ejecutar)){
                         
@@ -127,14 +121,13 @@
 
                     <tbody>
                         
-                        <td> <center><?php echo $fila['empleado_id']?> </center></td>
-                        <td> <center><?php echo $fila['Nombre_completo_empleado']?> </center></td>
+                        <td> <center><?php echo $fila['administrador_id']?> </center></td>
+                        <td> <center><?php echo $fila['Nombre_completo_admin']?> </center></td>
                         <td> <center><?php echo $fila['DPI']?> </center></td>
                         <td> <center><?php echo $fila['edad']?> </center></td>
                         <td> <center><?php echo $fila['user']?> </center></td>
                         <td> <center><?php echo $fila['password']?> </center></td>
                         <td> <center><?php echo $fila['tipo_sexo']?> </center></td>
-                        <td> <center><?php echo $fila['Nombre_completo_administrador']?> </center></td>
                         <td></td>
                        
                     </tbody>
