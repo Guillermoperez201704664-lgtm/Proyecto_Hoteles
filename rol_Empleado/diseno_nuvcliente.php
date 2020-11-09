@@ -52,7 +52,7 @@
               <label for="txt_sexo">Sexo</label><br>
               <select class="" name="txt_sexo" id="txt_sexo">
                 <?php
-                  include "daoem/conexion.php";
+                  include "daonc/conexion.php";
                   $sql = "select * from sexo";
                   $ejecutar = mysqli_query($conexion, $sql);
                   while($txt_sexo = mysqli_fetch_array($ejecutar)){
@@ -64,9 +64,9 @@
         </div> 
          
         <div>
-             <button type="submit" class="p-3 mb-2 bg-dark text-white" name="btnguardar" id="btnguardarnv">Guardar</button> 
-             <button type="submit" class="p-3 mb-2 bg-primary text-white" name="btnactualizar" id="btnactualizarvn">Actualizar</button>
-             <button type="submit" class="p-3 mb-2 bg-primary text-white" name="btnactualizar" id="bteliminarvn">Eliminar</button>
+             <button type="submit" class="p-3 mb-2 bg-dark text-white" name="btnguardarnv" id="btnguardarnv">Guardar</button> 
+             <button type="submit" class="p-3 mb-2 bg-primary text-white" name="btnactualizarvn" id="btnactualizarvn">Actualizar</button>
+             <button type="submit" class="p-3 mb-2 bg-primary text-white" name="bteliminarvn" id="bteliminarvn">Eliminar</button>
              <tr><td><a href="Menu_Empleado.php"><img src="imgensE/imge.4.png"  ></td></tr>
              <tr><td><a href="../Seccion.php"><img src="imgensE/imge.5.png" ></td></tr>
         </div>
@@ -86,7 +86,7 @@
       </thead>
     
       <?php
-          include "daoem/conexion.php";
+          include "daonc/conexion.php";
           $sql = "select * from cliente";
           $ejecutar = mysqli_query($conexion, $sql);
           while ($fila = mysqli_fetch_array($ejecutar)){              
@@ -112,7 +112,7 @@
                 e.preventDefault();
                 agregar_datos();
             });
-            $("#btnactualizarnv").on('click', function(e){
+            $("#btnactualizarvn").on('click', function(e){
                 alert("click en boton actualizar");
                 e.preventDefault();
                 modificar_datos();

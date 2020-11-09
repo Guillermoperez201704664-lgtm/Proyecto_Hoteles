@@ -1,15 +1,14 @@
 <?php
   include "conexion.php";
 
-  $txt_cid_id=$_POST['txt_cid'];
-  $txt_nom_id=$_POST['txt_nom'];
-  $txt_apellido_id=$_POST['txt_apellido'];
+  $txt_cid=$_POST['txt_cid'];
+  $txt_nom=$_POST['txt_nom'];
+  $txt_apellido=$_POST['txt_apellido'];
   $txt_dpi=$_POST['txt_dpi'];
-  $txt_sexo=$_POST['txt_sexo'];;
+  $txt_sexo=$_POST['txt_sexo'];
  
 
-
- $sql = "delete from asignacion_habitacion Where correlativo = $txtcorre";
+  $sql = "delete from cliente where cliente_id = $txt_cid";
   $cantidad= mysqli_query($conexion, $sql);
   echo $cantidad;  
 
