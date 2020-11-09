@@ -1,9 +1,9 @@
 function agregar_datos() {
-    var datos = $("#frmrecervacion").serialize();
+    var datos = $("#frmncliente").serialize();
     //alert(datos);
     $.ajax({
         method: "POST",
-        url: "daoem/insertar.php",
+        url: "daonc/insertar.php",
         data: datos,
         success: function(e) {
             if (e == 1) {
@@ -18,11 +18,11 @@ function agregar_datos() {
 }
 function eliminar_datos() {
     //obteniendo todos los datos del formulario
-    var datos = $("#frmrecervacion").serialize();
+    var datos = $("#frmncliente").serialize();
     alert(datos);
     $.ajax({
         method: "POST",
-        url: "daoem/eliminar.php",
+        url: "daonc/eliminar.php",
         data: datos,
         success: function(e) {
             if (e == 1) {
@@ -34,13 +34,14 @@ function eliminar_datos() {
     });
     return false;
 }
+  
 function modificar_datos() {
     //obteniendo todos los datos del formulario
-    var datos = $("#frmrecervacion").serialize();
+    var datos = $("#frmncliente").serialize();
     alert(datos);
     $.ajax({
         method: "POST",
-        url: "daoem/actualizar.php",
+        url: "daonc/actualizar.php",
         data: datos,
         success: function(e) {
             if (e == 1) {

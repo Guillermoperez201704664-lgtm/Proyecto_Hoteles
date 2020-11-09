@@ -1,18 +1,16 @@
-<?php 
-  include "conexion.php";
-  
-  $txt_corel=$_POST['txt_corel'];
-  $txt_client=$_POST['txt_client'];
-  $txt_habit=$_POST['txt_habit'];
-  $txt_fechi=$_POST['txt_fechi'];
-  $txt_estat=$_POST['txt_estat'];
+<?php
+   include "conexion.php";
 
-  $sql= "INSERT INTO asignacion_habitacion(correlativo,cliente_id, habitacion_id,Fecha_ingreso,estatus_id)
+   $txtcliente_id=$_POST['txtcliente_id'];
+   $txthabit_id=$_POST['txthabit_id'];
+   $txtesta_id=$_POST['txtesta_id'];
+   $txtcorre=$_POST['txtcorre'];
+   $txtfecha=$_POST['txtfecha'];
+ 
 
-values($txt_corel,$txt_client,$txt_habit,'$txt_fechi',$txt_estat)";
+  $sql = " INSERT INTO asignacion_habitacion(correlativo, cliente_id, habitacion_id, Fecha_ingreso, estatus_id)
+  VALUES($txtcorre,$txtcliente_id,$txthabit_id,'$txtfecha',$txtesta_id)";
 
-
-  $cantidad= mysqli_query($conexion, $sql);
-  echo $cantidad;
-
+   $cantidad= mysqli_query($conexion, $sql);
+   echo $cantidad;  
 ?>

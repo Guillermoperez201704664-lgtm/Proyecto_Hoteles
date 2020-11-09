@@ -30,35 +30,63 @@
   <div class="container">     
    <form id="frmrecervacion" method="post">
         <div class="form-row">
-
-          
-           <div class="form-group">
-                        <center>
-                        <select class="" name="txtsexo_id" id="txtsexo_id">
-                            <?php
-                            include "dao/conexion.php";
-                            $sql = "select * from sexo";
-                            $ejecutar = mysqli_query($conexion, $sql);
-                            while($txtsexo_id = mysqli_fetch_array($ejecutar)){
-                                echo "<option value='".$txtsexo_id ['sexo_id']."'>".utf8_encode($txtsexo_id ['tipo_sexo'])."</option>";
-                            } 
-                            ?>
-                        </select>
-                        </center>  
-                    </div>
-
-
-
-
-
+           <div class="form-group col-md-2ss">
+             <label for="txtcorre">correlativo</label>
+             <input type="text" class="form-control" name="txtcorre" id="txtcorre">
+           </div>
+           <div class="form-group col-md-3">
+              <label for="txtcliente_id">Nombre del cliente</label><br>
+              <select class="" name="txtcliente_id" id="txtcliente_id">
+                <?php
+                  include "daoem/conexion.php";
+                  $sql = "select * from cliente";
+                  $ejecutar = mysqli_query($conexion, $sql);
+                  while($txtcliente_id = mysqli_fetch_array($ejecutar)){
+                  echo "<option value='".$txtcliente_id ['cliente_id']."'>".utf8_encode($txtcliente_id ['nombre_cliente'])."</option>";
+                  } 
+                ?>
+               </select>
+           </div>
+           <div class="form-group col-md-2">
+              <label for="txthabit_id">No.habitacion</label><br>
+              <select class="" name="txthabit_id" id="txthabit_id">
+                <?php
+                  include "daoem/conexion.php";
+                  $sql = "select * from habitacion";
+                  $ejecutar = mysqli_query($conexion, $sql);
+                  while($txthabit_id = mysqli_fetch_array($ejecutar)){
+                  echo "<option value='".$txthabit_id ['habitacion_id']."'>".utf8_encode($txthabit_id ['numero_habitacion'])."</option>";
+                  } 
+                ?>
+              </select>
+           </div>
+        </div><br>
+        <div class="form-row">
+           <div class="form-group col-md-3">
+              <label for="txtfecha">Fecha de ingreso</label>
+              <input type="text" class="form-control" name="txtfecha" id="txtfecha">
+           </div>
+           <div class="">
+             <label for="txtesta_id">Estatus de la habitacion</label><br>
+             <select class="" name="txtesta_id" id="txtesta_id">
+                <?php
+                  include "daoA/conexion.php";
+                  $sql = "select * from estatus_habitacion";
+                  $ejecutar = mysqli_query($conexion, $sql);
+                  while($txtesta_id = mysqli_fetch_array($ejecutar)){
+                  echo "<option value='".$txtesta_id ['estatus_id']."'>".utf8_encode($txtesta_id ['tipo_estatus'])."</option>";
+                  } 
+                ?>
+              </select>  
+           </div>
         </div> 
          
         <div>
              <button type="submit" class="p-3 mb-2 bg-dark text-white" name="btnguardarem" id="btnguardarem">Guardar</button> 
              <button type="submit" class="p-3 mb-2 bg-primary text-white" name="btnactualizarem" id="btnactualizarem">Actualizar</button>
-             <button type="submit" class="p-3 mb-2 bg-dark text-white" name="btneliminarem" id="btneliminarem">Buscar</button>
-             <button type="submit" class="p-3 mb-2 bg-primary text-white" name="btnactualizarem" id="btnactualizarem">Eliminar</button>
+             <button type="submit" class="p-3 mb-2 bg-primary text-white" name="btneliminarem" id="btneliminarem">Eliminar</button>
              <tr><td><a href="Menu_Empleado.php"><img src="imgensE/imge.4.png"  ></td></tr>
+             <tr><td><a href="fpdf/reportPDF.php"><img src="imgensE/impm.png" ></td></tr>
              <tr><td><a href="../Seccion.php"><img src="imgensE/imge.5.png" ></td></tr>
         </div>
     </form>       
@@ -77,7 +105,7 @@
       </thead>
     
       <?php
-          include "conexion.php";
+          include "daoem/conexion.php";
           $sql = "select * from asignacion_habitacion";
           $ejecutar = mysqli_query($conexion, $sql);
           while ($fila = mysqli_fetch_array($ejecutar)){              
@@ -101,7 +129,7 @@
             $("#btnguardarem").on('click', function(e) {
                 //alert("click");
                 e.preventDefault();
-                agregar_datosres();
+                agregar_datos();
             });
             $("#btnactualizarem").on('click', function(e){
                 alert("click en boton actualizar");
@@ -112,6 +140,11 @@
                 alert("click en boton eliminar");
                 e.preventDefault();
                 eliminar_datos();
+            });
+            $("#btnbuscarem").on('click', function(e){
+                alert("click en boton actualizar");
+                e.preventDefault();
+                buscar_datos();
             });
         });
   </script>
