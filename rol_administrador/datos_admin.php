@@ -97,6 +97,8 @@
 
                   <a href="datos_admin.php"><button type="submit" class="btn btn-secondary" name="btnactualizar" id="btnactualizar"> Actualizar Pagina</button> </a>
 
+                  <a href="fpdf_administrador/reportPDF.php"><button type="submit" class="btn btn-secondary" name="" id=""> Descargar PDF</button> </a>
+
 
                 <table class="table">
                     <thead>

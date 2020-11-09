@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 08-11-2020 a las 04:16:29
--- Versión del servidor: 10.4.13-MariaDB
--- Versión de PHP: 7.4.8
+-- Tiempo de generación: 09-11-2020 a las 09:29:31
+-- Versión del servidor: 10.4.11-MariaDB
+-- Versión de PHP: 7.4.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -43,7 +43,7 @@ CREATE TABLE `administrador` (
 --
 
 INSERT INTO `administrador` (`administrador_id`, `nombre_administrador`, `apellido_administrador`, `DPI`, `edad`, `sexo_id`, `user`, `password`) VALUES
-(1, 'Guillermo ', 'Perez ', 203, 22, 1, '@_g', '@_p');
+(1, 'Guillermo ', 'Perez ', 201704664, 22, 1, '@_guillermo', '@_201704664');
 
 -- --------------------------------------------------------
 
@@ -113,7 +113,7 @@ CREATE TABLE `empleados` (
 --
 
 INSERT INTO `empleados` (`empleado_id`, `nombre_empleado`, `apellido_empleado`, `DPI`, `edad`, `user`, `password`, `sexo_id`, `administrador_id`) VALUES
-(1, 'Elena ', 'Ventura ', 789, 19, 'elena', 'ventura', 2, 1);
+(1, 'Rocio', 'Urbina', 201704722, 19, '@_Urbina', '@_201704722', 2, 1);
 
 -- --------------------------------------------------------
 

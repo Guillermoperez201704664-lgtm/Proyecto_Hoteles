@@ -103,6 +103,8 @@
 
                   <a href="datos_empleado.php"><button type="submit" class="btn btn-secondary" name="btnactualizar" id="btnactualizar"> Actualizar Pagina</button> </a>
 
+                  <a href="fpdf_datosEmpleado/reportPDF.php"><button type="submit" class="btn btn-secondary" name="" id=""> Descargar PDF</button> </a>
+
 
                 <table class="table">
                     <thead>
