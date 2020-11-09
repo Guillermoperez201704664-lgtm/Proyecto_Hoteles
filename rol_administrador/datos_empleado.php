@@ -65,6 +65,8 @@
 
                     <div class="form-group">
                         <center>
+                            <label> Sexo Empleado  </label>
+                             <br>
                         <select class="" name="txtsexo_id" id="txtsexo_id">
                             <?php
                             include "dao/conexion.php";

@@ -56,6 +56,8 @@
 
                     <div class="form-group">
                         <center>
+                        <label> Sexo administrador  </label>
+                             <br>
                         <select class="" name="txtsexo_id" id="txtsexo_id">
                             <?php
                             include "daoA/conexion.php";

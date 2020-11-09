@@ -20,13 +20,13 @@
         <div class="content-menu">
            <div class="content-item">
                 
-                  <li><a href="Menu_administrador.php"><span class="icon-home"></a></span><h4 class="txt3">Inicio </h4></li>
+                  <li><a href="Menu_Habitaciones.php"><span class="icon-home"></a></span><h4 class="txt3">Inicio </h4></li>
 
                   <li><a href="PisoHabitaciones.php"><span class="icon-office"></a></span><h4 class="txt3">Pisos o Niveles </h4></li>
 
                   <li><a href="TipoHabitaciones.php"><span class="icon-office"></a></span><h4 class="txt3">Tipos Habitaciones </h4></li>
 
-                  <li><a href="Menu_administrador.php"><span class="icon-office"></a></span><h4 class="txt3">Historial Habitaciones </h4></li>
+                  <li><a href="datos_Habitaciones.php"><span class="icon-office"></a></span><h4 class="txt3">Datos Habitaciones </h4></li>
 
                   <li><a href="Menu_administrador.php"><span class="icon-key2"></a></span><h4 class="txt3"> Regresar   </h4></li>
 

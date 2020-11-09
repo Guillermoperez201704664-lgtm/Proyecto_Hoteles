@@ -22,13 +22,13 @@
                 
                   <li><a href="Menu_administrador.php"><span class="icon-home"></a></span><h4 class="txt3">Inicio </h4></li>
 
-                  <li><a href="Menu_administrador.php"><span class="icon-office"></a></span><h4 class="txt3">Habitaciones </h4></li>
+                  <li><a href="Menu_Habitaciones.php"><span class="icon-office"></a></span><h4 class="txt3">Habitaciones </h4></li>
 
                   <li><a href="datos_empleado.php"><span class="icon-profile"></a></span><h4 class="txt3">Empleados </h4></li>
 
                   <li><a href="datos_admin.php"><span class="icon-profile"></a></span><h4 class="txt3">Administrador </h4></li>
 
-                  <li><a href="diseno_pagina_Habitaciones.php"><span class="icon-folder-open"></a></span><h4 class="txt3">Historial Clientes  </h4></li>
+                  <li><a href="datos_Clientes.php"><span class="icon-folder-open"></a></span><h4 class="txt3">Historial Clientes  </h4></li>
 
                   <li><a href="../Seccion.php"><span class="icon-key2"></a></span><h4 class="txt3">Salir  </h4></li>
 
